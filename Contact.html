@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ismaila Diakhate</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header id="header">
+        <div class="menu">
+            <div class="logo-section">
+                <img id="be" src="./assets/img/Black White Minimalist Professional Initial Logo.png" alt="Logo Ismaila Diakhate">
+            </div>
+            
+            <nav class="nav-links">
+                <a href="portfolio.html">Accueil</a>
+                <a href="À propos de moi.html">À propos de moi</a>
+                <a href="Contact.html" class="active">Contact</a>
+            </nav>
+            
+            <div class="social-icons">
+                <a href="mailto:diakhateismaila68@gmsil.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:775256287" aria-label="Téléphone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://maps.google.com/?q=Rufisque,+Dakar" target="_blank" aria-label="Localisation: Rufisque, Dakar">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+
+            <!-- Menu burger pour mobile -->
+            <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Hero Contact -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contactez-moi</h1>
+                <p>Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. Je serais ravi de discuter avec vous et de voir comment nous pouvons collaborer ensemble.</p>
+            </div>
+        </section>
+
+        <!-- Section Contact Principal -->
+        <section class="contact-main">
+            <div class="contact-container">
+                <!-- Informations de contact -->
+                <div class="contact-info">
+                    <h2>Restons en contact</h2>
+                    <p>Je suis toujours ouvert aux nouvelles opportunités et aux discussions intéressantes. Contactez-moi par l'un des moyens ci-dessous.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>diakhateismaila68@gmsil.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p>77-525-62-87</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                            <h3>Localisation</h3>
+                            <p>Rufisque, Dakar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>Suivez-moi</h3>
+                        <div class="social-buttons">
+                            <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="social-btn twitter">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://snapchat.com" target="_blank" class="social-btn snapchat">
+                                <i class="fab fa-snapchat"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="social-btn linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire de contact -->
+                <div class="contact-form-section">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-header">
+                            <h2>Envoyez-moi un message</h2>
+                            <p>Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.</p>
+                        </div>
+
+                        <div id="formSuccess" class="form-success" role="status" aria-live="polite" aria-atomic="true" style="display:none;">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Merci, votre message a été envoyé !
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Adresse email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo et description -->
+            <div class="footer-brand">
+                <img class="footer-logo" src="./assets/img/Black White Minimalist Professional Initial Logo.png" alt="Logo">
+                <p>Développeur Frontend passionné par la création d'expériences web exceptionnelles.</p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="footer-nav">
+                <h4>Navigation</h4>
+                <a href="portfolio.html">Accueil</a>
+                <a href="À propos de moi.html">À propos</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+
+            <!-- Réseaux sociaux -->
+            <div class="footer-social-section">
+                <h4>Suivez-moi</h4>
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://snapchat.com" target="_blank" aria-label="Snapchat">
+                        <i class="fab fa-snapchat"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ismaila Diakhate. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bouton scroll to top -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismaila Diakhate - Développeur Frontend</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header id="header">
+        <div class="menu">
+            <div class="logo-section">
+                <img id="be" src="./assets/img/Black White Minimalist Professional Initial Logo.png" alt="Logo Ismaila Diakhate">
+            </div>
+            
+            <nav class="nav-links">
+                <a href="portfolio.html">Accueil</a>
+                <a href="À propos de moi.html">À propos de moi</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+            
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://snapchat.com" target="_blank" aria-label="Snapchat">
+                    <i class="fab fa-snapchat"></i>
+                </a>
+            </div>
+
+            <!-- Menu burger pour mobile -->
+            <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Hero -->
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="gauche fade-in">
+                    <h1>Bonjour, je suis <span class="highlight">Ismaila Diakhate</span>,<br> Développeur Frontend</h1>
+                    <p>Passionné par la création d'interfaces modernes et performantes, j'aide les entreprises et startups à transformer leurs idées en expériences web fluides et intuitives.</p>
+                    <div class="cta-buttons">
+                        <a href="./assets/img/mon cvv.pdf" download class="btn btn-primary">
+                            <i class="fas fa-download"></i> Télécharger mon CV
+                        </a>
+                        <a href="Contact.html" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Me contacter
+                        </a>
+                    </div>
+                </div>
+                <div class="droite fade-in">
+                    <div class="image-wrapper">
+                        <img src="./assets/img/Capture One Catalog0270 2.JPG" alt="Ismaila Diakhate">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À propos -->
+        <section class="about-section" id="about">
+            <div class="container-1">
+                <div class="gauche1 slide-in-left">
+                    <img src="./assets/img/representation-de-l-experience-utilisateur-et-conception-de-l-interface.jpg" alt="Expérience utilisateur">
+                </div>
+                <div class="droite1 slide-in-right">
+                    <h2>À propos de moi</h2>
+                    <p>Je suis un développeur frontend passionné par la création d'expériences digitales exceptionnelles. Mon travail ne se limite pas à transformer des maquettes en interfaces fonctionnelles ; il s'agit de donner vie à une vision, en alliant esthétique, performance et accessibilité. Chaque projet est pour moi une opportunité d'innover, d'apprendre et de repousser les limites du possible.</p>
+                    
+                    <div class="skills">
+                        <h3>Mes compétences</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-vuejs"></i>
+                                <span>Vue.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-bootstrap"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="Contact.html" class="btn btn-primary">Contactez-moi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets -->
+        <section class="projects" id="projects">
+            <h2 class="section-title">Projets Réalisés</h2>
+            
+            <div class="project-grid">
+                <!-- Projet 1 -->
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="./assets/img/Capture d’écran, le 2025-09-24 à 20.53.13.png" alt="Application Vue.js - Gestion de tâches">
+
+                        
+                    </div>
+                    <div class="project-info">
+                        <h3>Application de paiement en ligne</h3>
+                        <p>Application interactive développée avec Vue.js pour gérer efficacement vos tâches quotidiennes.</p>
+                        <div class="tech-tags">
+                            <span><i class="fab fa-js"></i> JavaScript</span>
+                            <span><i class="fab fa-html5"></i> HTML</span>
+                            <span><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span><i class="fab fa-vuejs"></i> Vue.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="./assets/img/restau.png" alt="Site web interactif">
+                        <div class="project-overlay">
+                    
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Site Web Interactif</h3>
+                        <p>Site web moderne avec animations et interactions avancées pour une expérience utilisateur optimale.</p>
+                        <div class="tech-tags">
+                            <span><i class="fab fa-html5"></i> HTML</span>
+                            <span><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span><i class="fab fa-js"></i> JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="./assets/img/Capture d’écran, le 2025-09-24 à 21.24.11.png" alt="Application web moderne">
+                     
+                    </div>
+                    <div class="project-info">
+                        <h3>jeu js</h3>
+                        <p>Site web élégant pour restaurant avec système de réservation et menu interactif.</p>
+                        <div class="tech-tags">
+                            <span><i class="fab fa-html5"></i> HTML</span>
+                            <span><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span><i class="fab fa-js"></i> JavaScript</span>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact CTA -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Prêt à donner vie à votre projet ?</h2>
+                <p>Discutons de votre prochain projet et créons ensemble quelque chose d'exceptionnel.</p>
+                <a href="contact.html" class="btn btn-light">Démarrer un projet</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo et description -->
+            <div class="footer-brand">
+                <img class="footer-logo" src="./assets/img/Black White Minimalist Professional Initial Logo.png" alt="Logo">
+                <p>Développeur Frontend passionné par la création d'expériences web exceptionnelles.</p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="footer-nav">
+                <h4>Navigation</h4>
+                <a href="portfolio.html">Accueil</a>
+                <a href="À propos de moi.html">À propos</a>
+                <a href="portfolio.html">Réalisations</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+
+            <!-- Réseaux sociaux -->
+            <div class="footer-social-section">
+                <h4>Suivez-moi</h4>
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://snapchat.com" target="_blank" aria-label="Snapchat">
+                        <i class="fab fa-snapchat"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ismaila Diakhate. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bouton scroll to top -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
