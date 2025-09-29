@@ -1,3 +1,8 @@
+<!--
+Project: Mon Portfolio
+File: README.md
+Description: Documentation du mini-projet — page de contact.
+-->
 # Mon Portfolio — Page Contact
 
 Bref projet contenant une page de contact simple et stylée.

@@ -938,6 +938,13 @@ header.scrolled {
     }
 }
 
+@media (max-width: 360px) {
+    .image-wrapper {
+        width: 200px;
+        height: 260px;
+    }
+}
+
 /* ==================== Print Styles ==================== */
 @media print {
     header,

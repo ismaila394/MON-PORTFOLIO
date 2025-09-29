@@ -835,6 +835,43 @@ section {
     .burger-menu {
         display: flex;
     }
+
+    /* Navigation mobile slide-in */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 40px 0;
+        gap: 20px;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow-light);
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        left: 0;
+        display: flex;
+    }
+
+    .social-icons {
+        display: none;
+    }
+
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
     
     .presentation-container {
         grid-template-columns: 1fr;
@@ -914,6 +951,13 @@ section {
         width: 100%;
         max-width: 300px;
         justify-content: center;
+    }
+
+    /* Désactiver animations sur mobile */
+    .fade-in,
+    .slide-in-left,
+    .slide-in-right {
+        animation: none !important;
     }
 }
 

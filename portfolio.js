@@ -89,9 +89,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== Animation au scroll (Intersection Observer) ====================
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0,
+    rootMargin: '0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -100,7 +101,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('animate');
             
             // Animation en cascade pour les éléments de grille
-            if (entry.target.classList.contains('project-item')) {
+            if (!isMobile && entry.target.classList.contains('project-item')) {
                 const items = document.querySelectorAll('.project-item');
                 items.forEach((item, index) => {
                     setTimeout(() => {
@@ -109,29 +110,100 @@ const observer = new IntersectionObserver((entries) => {
                     }, index * 100);
                 });
             }
+
+            // Lancer les compteurs lorsqu'ils entrent en vue
+            if (!isMobile && entry.target.classList.contains('stat-number')) {
+                // Rendre visible le compteur et lancer l'animation
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'none';
+                const targetValue = parseInt(entry.target.getAttribute('data-target')) || 0;
+                animateCounter(entry.target, targetValue);
+                observer.unobserve(entry.target);
+            }
+
+            // Lancer l'animation des barres de compétences
+            if (!isMobile && entry.target.classList.contains('skill-progress')) {
+                const progress = parseInt(entry.target.getAttribute('data-progress')) || 0;
+                entry.target.style.width = progress + '%';
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'none';
+                observer.unobserve(entry.target);
+            }
         }
     });
 }, observerOptions);
 
 // Observer tous les éléments à animer
-const elementsToAnimate = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .project-item');
-elementsToAnimate.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    observer.observe(el);
+if (!isMobile) {
+    // Masquer uniquement les éléments visuels (pas les compteurs)
+    const visualElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .project-item');
+    visualElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        observer.observe(el);
+    });
+
+    // Observer les compteurs sans les masquer d'emblée
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(num => observer.observe(num));
+
+    // Observer les barres de compétences (partent de 0)
+    const skillBars = document.querySelectorAll('.skill-progress');
+    skillBars.forEach(bar => {
+        bar.style.width = '0%';
+        observer.observe(bar);
+    });
+}
+// Sur mobile: fixer immédiatement les barres au pourcentage, sans animation
+else {
+    const applyMobileSkillsAndCounters = () => {
+        const skillBars = document.querySelectorAll('.skill-progress');
+        skillBars.forEach(bar => {
+            const progress = parseInt(bar.getAttribute('data-progress')) || 0;
+            // Désactiver la transition pour éviter tout clignotement
+            bar.style.transition = 'none';
+            bar.style.width = progress + '%';
+        });
+
+        // Fixer les compteurs directement à leur valeur cible sur mobile
+        const mobileCounters = document.querySelectorAll('.stat-number');
+        mobileCounters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target')) || 0;
+            counter.style.opacity = '1';
+            counter.style.transform = 'none';
+            counter.textContent = target;
+        });
+    };
+
+    // Exécuter immédiatement et après le chargement pour garantir l'application
+    applyMobileSkillsAndCounters();
+    window.addEventListener('load', () => {
+        // Petit délai pour laisser le layout s'initialiser
+        setTimeout(applyMobileSkillsAndCounters, 50);
+    });
+}
+
+// Observer séparément les barres de compétences sans masquer leur conteneur
+const skillBars = document.querySelectorAll('.skill-progress');
+skillBars.forEach(bar => {
+    // S'assurer que les barres démarrent bien à 0
+    bar.style.width = '0%';
+    observer.observe(bar);
 });
 
 // ==================== Effet parallaxe sur les images ====================
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.droite img, .gauche1 img');
-    
-    parallaxElements.forEach(el => {
-        const speed = 0.5;
-        const yPos = -(scrolled * speed);
-        el.style.transform = `translateY(${yPos}px)`;
+if (!isMobile) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.droite img, .gauche1 img');
+        
+        parallaxElements.forEach(el => {
+            const speed = 0.5;
+            const yPos = -(scrolled * speed);
+            el.style.transform = `translateY(${yPos}px)`;
+        });
     });
-});
+}
 
 // ==================== Effet de typing sur le titre (optionnel) ====================
 function typeWriter(element, text, speed = 100) {
@@ -306,6 +378,17 @@ window.addEventListener('load', () => {
             el.style.transform = 'translateY(0)';
         });
     }, 100);
+
+    // Afficher le message de succès après redirection (?success=1)
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === '1') {
+        const success = document.getElementById('formSuccess');
+        if (success) {
+            success.style.display = 'flex';
+            // Nettoyer l'URL pour enlever le paramètre
+            history.replaceState({}, '', window.location.pathname);
+        }
+    }
 });
 
 // ==================== Console Message ====================
@@ -326,15 +409,8 @@ if ('serviceWorker' in navigator) {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
+        // Laisser le formulaire soumettre vers FormSubmit
         const success = document.getElementById('formSuccess');
-        if (success) {
-            success.style.display = 'flex';
-        }
-
-        // Optionnel: réinitialiser le formulaire et remonter à l'alerte
-        contactForm.reset();
-        success && success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        success && (success.style.display = 'flex');
     });
 }
