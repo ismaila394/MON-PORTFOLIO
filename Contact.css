@@ -53,7 +53,7 @@ License: MIT-like / usage libre (modifiez selon vos besoins)
 
 /* ===== SECTION HERO CONTACT ===== */
 .contact-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
     padding: 120px 20px 80px;
     color: white;
     text-align: center;
@@ -74,15 +74,15 @@ License: MIT-like / usage libre (modifiez selon vos besoins)
 
 .contact-hero .container {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .contact-hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: 600;
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
 }
@@ -90,11 +90,12 @@ License: MIT-like / usage libre (modifiez selon vos besoins)
 .contact-hero p {
     font-size: 1.2rem;
     opacity: 0.9;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto 2rem;
     line-height: 1.6;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.3s forwards;
+    margin-top: 50px;
 }
 
 /* ===== SECTION CONTACT PRINCIPAL ===== */
@@ -282,8 +283,8 @@ License: MIT-like / usage libre (modifiez selon vos besoins)
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .form-group textarea {
@@ -292,7 +293,7 @@ License: MIT-like / usage libre (modifiez selon vos besoins)
 
 .btn-submit {
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -309,7 +310,7 @@ License: MIT-like / usage libre (modifiez selon vos besoins)
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
     animation: pulse 2s infinite;
 }
 
@@ -338,7 +339,7 @@ License: MIT-like / usage libre (modifiez selon vos besoins)
 
 /* ===== NAVIGATION ACTIVE ===== */
 .nav-links a.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
     color: white;
     padding: 8px 16px;
     border-radius: 8px;

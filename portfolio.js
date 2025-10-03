@@ -191,18 +191,45 @@ skillBars.forEach(bar => {
     observer.observe(bar);
 });
 
-// ==================== Effet parallaxe sur les images ====================
+// ==================== Effet parallaxe sur les images (ajusté) ====================
+// Appliquer la parallaxe sur les conteneurs pour ne pas casser le hover scale des images
 if (!isMobile) {
-    window.addEventListener('scroll', () => {
+    const applyParallax = () => {
         const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.droite img, .gauche1 img');
-        
+        const parallaxElements = document.querySelectorAll('.droite .image-wrapper, .gauche1');
+
         parallaxElements.forEach(el => {
-            const speed = 0.5;
-            const yPos = -(scrolled * speed);
+            // Vitesse réduite pour éviter que l'élément ne monte trop
+            const speed = 0.15;
+
+            // Calcul relatif à la position de l'élément dans la page
+            const elTop = el.getBoundingClientRect().top + window.pageYOffset;
+            const relativeScroll = scrolled - elTop;
+
+            // Déplacement limité pour rester subtil et maîtrisé
+            let yPos = -(relativeScroll * speed);
+            if (yPos < -60) yPos = -60; // limite vers le haut
+            if (yPos > 30) yPos = 30;   // limite vers le bas
+
             el.style.transform = `translateY(${yPos}px)`;
+            el.style.willChange = 'transform';
         });
+    };
+
+    // Utiliser scroll + raf pour fluidité
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                applyParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
+
+    // Premier calcul au chargement
+    applyParallax();
 }
 
 // ==================== Effet de typing sur le titre (optionnel) ====================

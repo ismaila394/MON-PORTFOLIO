@@ -1,12 +1,12 @@
 /* ==================== Variables CSS ==================== */
 :root {
-    --primary-color: #2be1e1;
-    --primary-dark: #023535;
-    --secondary-color: #3498db;
-    --text-dark: #333;
-    --text-light: #666;
-    --bg-light: #f8f9fa;
-    --bg-dark: #111;
+    --primary-color: #2563eb; /* Bleu professionnel */
+    --primary-dark: #1e40af; /* Bleu foncé */
+    --secondary-color: #64748b; /* Slate neutre */
+    --text-dark: #0f172a; /* Slate-900 */
+    --text-light: #475569; /* Slate-600 */
+    --bg-light: #f8fafc; /* Slate-50 */
+    --bg-dark: #0b1220; /* Slate quasi-noir */
     --white: #ffffff;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -143,7 +143,7 @@ header.scrolled {
 /* ==================== Hero Section ==================== */
 .hero-section {
     padding: 150px 5% 100px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -206,13 +206,13 @@ header.scrolled {
 .btn-primary {
     background: var(--primary-color);
     color: var(--white);
-    box-shadow: 0 5px 15px rgba(43, 225, 225, 0.3);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(43, 225, 225, 0.4);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
 .btn-secondary {
@@ -368,7 +368,7 @@ header.scrolled {
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(43, 225, 225, 0.2);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
 }
 
 .skill-item i {
@@ -385,7 +385,7 @@ header.scrolled {
 /* ==================== Projects Section ==================== */
 .projects {
     padding: 100px 5%;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 .section-title {
@@ -411,8 +411,9 @@ header.scrolled {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 .project-item {
@@ -421,6 +422,8 @@ header.scrolled {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-item:hover {
@@ -431,7 +434,8 @@ header.scrolled {
 .project-image {
     position: relative;
     overflow: hidden;
-    height: 250px;
+    aspect-ratio: 16 / 9;
+    height: auto;
 }
 
 .project-image img {
@@ -451,7 +455,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(43, 225, 225, 0.9);
+    background: rgba(37, 99, 235, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -483,6 +487,10 @@ header.scrolled {
 
 .project-info {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 auto;
 }
 
 .project-info h3 {
@@ -499,22 +507,30 @@ header.scrolled {
 }
 
 .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    align-items: center;
+    margin-top: auto;
 }
 
 .tech-tags span {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 6px;
     background: var(--primary-color);
     color: var(--white);
-    padding: 6px 14px;
+    padding: 6px 10px;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 500;
+    min-width: 0;
+    white-space: nowrap;
 }
+
+/* Masquer les tags au-delà du 3e pour garantir une seule ligne */
+.tech-tags span:nth-child(n+4) { display: none; }
 
 /* ==================== CTA Section ==================== */
 .cta-section {
@@ -537,7 +553,7 @@ header.scrolled {
 
 /* ==================== Footer ==================== */
 .footer {
-    background: var(--bg-dark);
+    background: #0f172a; /* plus doux que le quasi-noir */
     color: var(--white);
     padding: 60px 5% 20px;
 }
@@ -581,7 +597,7 @@ header.scrolled {
 }
 
 .footer-nav a:hover {
-    color: var(--primary-color);
+    color: #60a5fa;
     padding-left: 5px;
 }
 
@@ -604,7 +620,7 @@ header.scrolled {
 }
 
 .footer-social a:hover {
-    background: var(--primary-color);
+    background: #1e40af; /* hover plus doux */
     transform: translateY(-5px);
 }
 
@@ -631,7 +647,7 @@ header.scrolled {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    box-shadow: 0 5px 15px rgba(43, 225, 225, 0.3);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
     z-index: 999;
 }
 

@@ -6,15 +6,15 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-dark: #2c3e50;
-    --text-light: #7f8c8d;
-    --background-light: #ecf0f1;
+    --primary-color: #2563eb;
+    --secondary-color: #2563eb;
+    --accent-color: #1e40af;
+    --text-dark: #0f172a;
+    --text-light: #475569;
+    --background-light: #f8fafc;
     --white: #ffffff;
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    --gradient-secondary: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
     --shadow-light: 0 5px 15px rgba(0,0,0,0.08);
     --shadow-medium: 0 10px 30px rgba(0,0,0,0.12);
     --shadow-heavy: 0 20px 40px rgba(0,0,0,0.15);
@@ -130,7 +130,7 @@ body {
 
 /* Hero Section */
 .hero-about {
-    min-height: 60vh;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,6 +156,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, #fff, #f0f8ff);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -247,6 +248,7 @@ section {
 
 .highlight {
     background: var(--gradient-primary);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
